@@ -1,0 +1,38 @@
+myconfig:
+    # paths to explore
+    path:
+        extensions: php|inc
+        exclude: Features|Tests|tests|i18n|migrations
+
+    # report and violations files
+    logging:
+        report:
+            #xml:    ./log/phpmetrics.xml
+            html:   ./phpmetrics/metrics.html
+            #csv:    ./log/phpmetrics.csv
+        violations:
+            xml:    ./phpmetrics/violations.xml
+        chart:
+            bubbles: ./phpmetrics/bubbles.svg
+
+    # condition of failure
+    #failure: average.maintenabilityIndex < 50 or sum.loc > 10000
+
+    rules:
+        # defaults
+        cyclomaticComplexity: [ 10, 6, 2 ]
+        maintenabilityIndex: [0, 65, 85] # Its values range from negative infinity up to 171 on a logarithmic scale. Higher values indicate better maintainability.
+        logicalLoc: [800, 400, 200]
+        bugs: [0.35, 0.25, 0.15]
+        commentWeight: [36, 38, 41]
+        vocabulary: [51, 34, 27]
+        difficulty: [18, 15, 5.8]
+        instability: [1, .95, .45]
+        afferentCoupling: [20, 15, 9]
+        efferentCoupling: [15, 11, 7]
+        myerDistance: [10, 5, 2]
+        lcom: [3, 2, 1.5]
+        # custom values
+        volume: [3000, 1500, 300]
+        bugs: [.8, .6, 0]
+        effort: [37000, 20000, 10000]
